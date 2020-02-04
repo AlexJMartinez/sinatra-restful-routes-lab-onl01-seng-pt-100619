@@ -1,4 +1,4 @@
-require './config/environment'
+# require './config/environment'
 
 class ApplicationController < Sinatra::Base
   configure do
@@ -16,4 +16,5 @@ post '/recipes' do
   redirect to "/recipes/#{@recipe.id}"
 end
 
+end
 end
