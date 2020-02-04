@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
   # code actions here!
   get '/recipes/new'
     erb :new
-end
+  end
 
 post '/recipes' do
   @recipe = Recipe.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
