@@ -1,3 +1,5 @@
+require './config/environment'
+
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -5,5 +7,6 @@ class ApplicationController < Sinatra::Base
   end
 
   # code actions here!
+
 
 end
