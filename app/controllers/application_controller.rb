@@ -1,7 +1,7 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
-  
+
   set :views, Proc.new { File.join(root, "../views/") }
 
   configure do
@@ -9,16 +9,16 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/recipes/new' do 
+  get '/recipes/new' do
     erb :new
   end
 
-  get '/recipes' do 
+  get '/recipes' do
     @recipes = Recipe.all
     erb :index
   end
 
-  get '/recipes/:id' do  
+  get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  patch '/recipes/:id' do  #updates a recipe
+  patch '/recipes/:id' do  
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.name = params[:name]
     @recipe.ingredients = params[:ingredients]
