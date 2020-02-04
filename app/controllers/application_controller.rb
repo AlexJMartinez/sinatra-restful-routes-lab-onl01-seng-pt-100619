@@ -9,21 +9,21 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/recipes/new' do #loads new form
+  get '/recipes/new' do 
     erb :new
   end
 
-  get '/recipes' do #loads index page
+  get '/recipes' do 
     @recipes = Recipe.all
     erb :index
   end
 
-  get '/recipes/:id' do  #loads show page
+  get '/recipes/:id' do  
     @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
 
-  get '/recipes/:id/edit' do #loads edit form
+  get '/recipes/:id/edit' do 
     @recipe = Recipe.find_by_id(params[:id])
     erb :edit
   end
