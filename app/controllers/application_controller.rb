@@ -13,7 +13,7 @@ end
 
 post '/recipes' do
   @recipe = Recipe.create(:title => params[:title], :content => params[:content])
-  redirect to "/articles/#{@article.id}"
+  redirect to "/recipes/#{@article.id}"
 end
 
 end
